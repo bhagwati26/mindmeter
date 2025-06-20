@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.home {
+  background: linear-gradient(to bottom, #ffd89b, #ff8a00);
+}
+
+.tracker {
+  background: linear-gradient(to bottom right, #b2f7ef, #5fdd9d);
+}
+
+.journal {
+  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 30px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin: 20px;
+}
+
+.emoji-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  font-size: 2.5rem;
+  gap: 20px;
+}
+
+.bottom-nav {
+  margin-top: auto;
+  background: #333;
+  color: orange;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.bottom-nav a {
+  color: red;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
