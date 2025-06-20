@@ -15,6 +15,18 @@ body {
   min-height: 100vh;
   padding-bottom: 60px;
   background-color: #fff7e6;
+  font-size: 1.2rem;
+}
+
+/* Center block for each page */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  width: 100%;
+  padding: 20px;
 }
 
 /* Page backgrounds */
@@ -30,86 +42,95 @@ body {
   background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
 }
 
-/* Heading */
+/* Headings */
 h1 {
-  font-size: 2.5rem;
-  margin-top: 30px;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
   color: #333;
 }
 
 /* Tagline */
 .tagline {
-  font-size: 1.1rem;
-  margin: 20px;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
   color: #444;
 }
 
-/* Mood Emoji Section */
+/* Emoji section */
 .emoji-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 24px;
+  font-size: 3rem;
+  max-width: 90%;
   padding: 20px;
-  font-size: 2.2rem;
-  gap: 20px;
-  overflow-x: hidden;
 }
 
-/* Journal / Tracker Box Style */
+/* Centered and big form/journal boxes */
 .form-box,
 .journal-box {
-  width: 90%;
-  max-width: 400px;
-  margin: auto;
-  margin-top: 30px;
+  width: 95%;
+  max-width: 600px;
   background-color: #fff1cc;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  min-height: 60vh;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+  padding: 30px 20px;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
 
-/* Inputs & Text Areas */
+/* Questions inside boxes */
+.form-box p,
+.journal-box p {
+  font-size: 1.4rem;
+  margin-top: 16px;
+  color: #222;
+}
+
+/* Inputs, Textarea, Select */
 textarea,
 input,
 select {
   width: 100%;
-  max-width: 360px;
-  padding: 12px;
-  margin-top: 12px;
+  max-width: 550px;
+  padding: 16px;
+  margin-top: 18px;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: 12px;
+  font-size: 1.3rem;
   background-color: #fff9e6;
   box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
 }
 
 /* Buttons */
 button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 8px;
+  margin-top: 30px;
+  padding: 16px 24px;
+  border-radius: 12px;
   background-color: #ffb347;
   border: none;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.3rem;
   cursor: pointer;
   width: 100%;
-  max-width: 360px;
+  max-width: 550px;
+  font-family: 'Nunito', sans-serif;
 }
 
 /* Journal entries */
 .entry {
-  margin: 10px auto;
+  margin: 12px auto;
   max-width: 90%;
   text-align: center;
   background: #fbe2c2;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1.2rem;
 }
 
 /* Bottom Navigation */
@@ -121,7 +142,7 @@ button {
   color: #FFD704;
   display: flex;
   justify-content: space-around;
-  padding: 12px 0;
+  padding: 14px 0;
   z-index: 100;
 }
 
@@ -129,7 +150,7 @@ button {
   color: #fefefe;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .bottom-nav a:hover {
