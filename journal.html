@@ -2,17 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Journal</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .journal-box {
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      resize: vertical;
+      background: #fff1cc;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #ffb347;
+      color: #222;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .entry {
+      margin-top: 15px;
+      background: #fbe2c2;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: left;
+    }
+    .entry-date {
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
 </head>
 <body class="journal">
-  <h1>Add Journal Here</h1>
+  <h1>Write Your Journal</h1>
+
+  <div class="journal-box">
+    <textarea id="journalEntry" rows="6" placeholder="Write your thoughts here..."></textarea>
+    <br />
+    <button onclick="saveEntry()">Save Entry</button>
+    <div id="entryList"></div>
+  </div>
 
   <nav class="bottom-nav">
     <a href="index.html">Home</a>
     <a href="journal.html">Journal</a>
     <a href="tracker.html">Activity</a>
   </nav>
+
+  <script>
+    function saveEntry() {
+      const text = document.getElementById("journalEntry").value.trim();
+      if (text === "") {
+        alert("Please write something!");
+        return;
+      }
+
+      const date = new Date();
+      const entry = {
+        text: text,
+        date: date.toLocaleDateString() + " " + date.toLocaleTimeString()
+      };
+
+      let entries = JSON.parse(localStorage.getItem("myJournal")) || [];
+      entries.push(entry);
+      localStorage.setItem("myJournal", JSON.stringify(entries));
+
+      document.getElementById("journalEntry").value = "";
+      loadEntries();
+    }
+
+    function loadEntries() {
+      const entries = JSON.parse(localStorage.getItem("myJournal")) || [];
+      const entryList = document.getElementById("entryList");
+      entryList.innerHTML = "<h3>Your Entries:</h3>";
+
+      entries.reverse().forEach((entry) => {
+        const div = document.createElement("div");
+        div.className = "entry";
+        div.innerHTML = `<div class="entry-date">${entry.date}</div><p>${entry.text}</p>`;
+        entryList.appendChild(div);
+      });
+    }
+
+    window.onload = loadEntries;
+  </script>
 </body>
 </html>
