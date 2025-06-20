@@ -1,34 +1,47 @@
+/* ✅ Import Canva-style Playful Font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'Nunito', sans-serif;
   text-align: center;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-bottom: 60px;
+  background-color: #fff7e6;
 }
 
+/* ✅ Home = Orange Yellow Gradient */
 .home {
-  background: linear-gradient(to bottom, #ffd89b, #ff8a00);
+  background: linear-gradient(to bottom right, #FFC804, #FFD704);
 }
 
+/* ✅ Mood Tracker = Soft Green Gradient */
 .tracker {
   background: linear-gradient(to bottom right, #b2f7ef, #5fdd9d);
 }
 
+/* ✅ Journal = Sky Blue Gradient */
 .journal {
   background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
 }
 
+/* ✅ Headings */
 h1 {
   font-size: 3rem;
   margin-top: 30px;
+  color: #333;
 }
 
+/* ✅ Tagline Text */
 .tagline {
   font-size: 1.2rem;
   margin: 20px;
+  color: #444;
 }
 
+/* ✅ Emoji Container (no scroll) */
 .emoji-container {
   display: flex;
   flex-wrap: wrap;
@@ -36,19 +49,31 @@ h1 {
   padding: 20px;
   font-size: 2.5rem;
   gap: 20px;
+  overflow-x: hidden;
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
+/* ✅ Bottom Navigation Bar */
 .bottom-nav {
-  margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background: #333;
-  color: orange;
+  color: #FFD704;
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
+  padding: 12px 0;
+  z-index: 100;
 }
 
 .bottom-nav a {
-  color: red;
+  color: #fefefe;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.bottom-nav a:hover {
+  text-decoration: underline;
 }
