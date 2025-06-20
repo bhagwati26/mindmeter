@@ -1,39 +1,72 @@
-<script>
-  let currentUser = prompt("Enter your name:");
-  if (!currentUser) currentUser = "Guest";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Journal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="journal">
+  <div class="main-container">
+    <h1>My Journal</h1>
 
-  const storageKey = `journal_${currentUser}`;
+    <div class="journal-box">
+      <input type="text" id="username" placeholder="Enter your email or name to load your journal" />
+      <textarea id="journalEntry" placeholder="Write your thoughts..."></textarea>
+      <button onclick="saveEntry()">Save Entry</button>
+      <div id="entryList"></div>
+    </div>
+  </div>
 
-  function saveEntry() {
-    const text = document.getElementById("journalEntry").value.trim();
-    if (!text) return alert("Please write something!");
+  <div class="bottom-nav">
+    <a href="index.html">Home</a>
+    <a href="tracker.html">Tracker</a>
+    <a href="journal.html">Journal</a>
+  </div>
 
-    const date = new Date();
-    const entry = {
-      text,
-      date: date.toLocaleDateString() + " " + date.toLocaleTimeString()
-    };
+  <script>
+    function getStorageKey() {
+      const username = document.getElementById("username").value.trim();
+      return username ? `journal_${username}` : null;
+    }
 
-    const entries = JSON.parse(localStorage.getItem(storageKey)) || [];
-    entries.push(entry);
-    localStorage.setItem(storageKey, JSON.stringify(entries));
+    function saveEntry() {
+      const storageKey = getStorageKey();
+      const text = document.getElementById("journalEntry").value.trim();
+      if (!storageKey) return alert("Please enter your name or email!");
+      if (!text) return alert("Write something to save!");
 
-    document.getElementById("journalEntry").value = "";
-    loadEntries();
-  }
+      const date = new Date();
+      const entry = {
+        text,
+        date: date.toLocaleDateString() + " " + date.toLocaleTimeString()
+      };
 
-  function loadEntries() {
-    const entries = JSON.parse(localStorage.getItem(storageKey)) || [];
-    const entryList = document.getElementById("entryList");
-    entryList.innerHTML = `<h3>${currentUser}'s Journal:</h3>`;
+      const entries = JSON.parse(localStorage.getItem(storageKey)) || [];
+      entries.push(entry);
+      localStorage.setItem(storageKey, JSON.stringify(entries));
 
-    entries.reverse().forEach(entry => {
-      const div = document.createElement("div");
-      div.className = "entry";
-      div.innerHTML = `<div class="entry-date">${entry.date}</div><p>${entry.text}</p>`;
-      entryList.appendChild(div);
-    });
-  }
+      document.getElementById("journalEntry").value = "";
+      loadEntries();
+    }
 
-  window.onload = loadEntries;
-</script>
+    function loadEntries() {
+      const storageKey = getStorageKey();
+      if (!storageKey) return;
+
+      const entries = JSON.parse(localStorage.getItem(storageKey)) || [];
+      const entryList = document.getElementById("entryList");
+      entryList.innerHTML = `<h3>Your Journal Entries:</h3>`;
+
+      entries.reverse().forEach(entry => {
+        const div = document.createElement("div");
+        div.className = "entry";
+        div.innerHTML = `<div class="entry-date">${entry.date}</div><p>${entry.text}</p>`;
+        entryList.appendChild(div);
+      });
+    }
+
+    document.getElementById("username").addEventListener("input", loadEntries);
+  </script>
+</body>
+</html>
