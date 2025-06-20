@@ -15,122 +15,88 @@ body {
   min-height: 100vh;
   padding-bottom: 60px;
   background-color: #fff7e6;
-  font-size: 1.4rem; /* Bigger base font */
+  font-size: 1.4rem;
 }
 
-/* Center block for each page */
-.main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 60px);
-  width: 100%;
-  padding: 20px;
-}
-
-/* Page backgrounds (faint version) */
+/* Page backgrounds */
 .home {
-  background: linear-gradient(to bottom right, #fff3b0, #ffe680); /* 🔸 faint yellow-orange */
+  background: linear-gradient(to bottom right, #fff3b0, #ffe680);
 }
 
 .tracker {
-  background: linear-gradient(to bottom right, #b2f7ef, #5fdd9d); /* mint-green */
+  background: linear-gradient(to bottom right, #b2f7ef, #5fdd9d);
 }
 
 .journal {
-  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb); /* sky-blue */
+  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
 }
 
-/* Headings */
+/* Heading */
 h1 {
-  font-size: 4rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* Tagline */
-.tagline {
-  font-size: 1.9rem;
-  margin-bottom: 20px;
-  color: #444;
-}
-
-/* Emoji section */
-.emoji-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  font-size: 3.2rem;
-  max-width: 95%;
-  padding: 24px;
-}
-
-/* Centered and big form/journal boxes */
-.form-box,
-.journal-box {
-  width: 96%;
-  max-width: 720px; /* ⬆️ wider */
-  background-color: #fff1cc;
-  border-radius: 24px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
-  padding: 36px 24px;
-  min-height: 78vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-/* Questions inside boxes */
-.form-box p,
-.journal-box p {
-  font-size: 1.6rem;
-  margin-top: 18px;
-  color: #222;
-}
-
-/* Inputs, Textarea, Select */
-textarea,
-input,
-select {
-  width: 100%;
-  max-width: 620px;
-  padding: 18px;
+  font-size: 2.5rem;
   margin-top: 20px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  font-size: 1.5rem;
-  background-color: #fff9e6;
-  box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
 }
 
-/* Buttons */
-button {
-  margin-top: 30px;
-  padding: 18px 28px;
+/* Form box */
+.form-box {
+  background: #fef0c7;
+  padding: 20px;
+  margin: 20px auto;
   border-radius: 12px;
-  background-color: #ffb347;
-  border: none;
-  font-weight: bold;
-  font-size: 1.5rem;
-  cursor: pointer;
+  box-shadow: 0 0 10px #999;
+  max-width: 600px;
+  width: 90%;
+}
+
+/* Form Elements */
+.form-box label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.form-box select,
+.form-box textarea {
   width: 100%;
-  max-width: 620px;
-  font-family: 'Nunito', sans-serif;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff9dd;
+  font-size: 1.1rem;
+  box-sizing: border-box;
 }
 
-/* Journal entries */
-.entry {
-  margin: 14px auto;
-  max-width: 90%;
-  text-align: center;
-  background: #fbe2c2;
-  padding: 16px;
+.form-box button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  display: block;
+  background: #ffb347;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+}
+
+/* Result Output */
+.result {
+  margin: 20px auto;
+  background: #ffe8a3;
+  padding: 20px;
   border-radius: 12px;
-  font-size: 1.3rem;
+  max-width: 600px;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.result h3 {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 /* Bottom Navigation */
@@ -139,18 +105,18 @@ button {
   bottom: 0;
   width: 100%;
   background: #333;
-  color: #FFD704;
   display: flex;
   justify-content: space-around;
-  padding: 16px 0;
+  padding: 14px 0;
+  color: #fff;
   z-index: 100;
 }
 
 .bottom-nav a {
-  color: #fefefe;
+  color: #FFD704;
+  font-weight: bold;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 
 .bottom-nav a:hover {
