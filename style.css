@@ -1,60 +1,118 @@
-/* ✅ Import Canva-style Playful Font */
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: 'Nunito', sans-serif;
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   padding-bottom: 60px;
   background-color: #fff7e6;
 }
 
-/* ✅ Home = Orange Yellow Gradient */
+/* Page backgrounds */
 .home {
   background: linear-gradient(to bottom right, #FFC804, #FFD704);
 }
 
-/* ✅ Mood Tracker = Soft Green Gradient */
 .tracker {
   background: linear-gradient(to bottom right, #b2f7ef, #5fdd9d);
 }
 
-/* ✅ Journal = Sky Blue Gradient */
 .journal {
   background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
 }
 
-/* ✅ Headings */
+/* Heading */
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-top: 30px;
   color: #333;
 }
 
-/* ✅ Tagline Text */
+/* Tagline */
 .tagline {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 20px;
   color: #444;
 }
 
-/* ✅ Emoji Container (no scroll) */
+/* Mood Emoji Section */
 .emoji-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   gap: 20px;
   overflow-x: hidden;
-  flex-shrink: 0;
-  flex-grow: 0;
 }
 
-/* ✅ Bottom Navigation Bar */
+/* Journal / Tracker Box Style */
+.form-box,
+.journal-box {
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 30px;
+  background-color: #fff1cc;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Inputs & Text Areas */
+textarea,
+input,
+select {
+  width: 100%;
+  max-width: 360px;
+  padding: 12px;
+  margin-top: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff9e6;
+  box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #ffb347;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Journal entries */
+.entry {
+  margin: 10px auto;
+  max-width: 90%;
+  text-align: center;
+  background: #fbe2c2;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Bottom Navigation */
 .bottom-nav {
   position: fixed;
   bottom: 0;
