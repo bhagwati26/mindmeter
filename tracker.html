@@ -2,17 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mood Tracker</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .form-box {
+      background: #ffffffcc;
+      padding: 15px;
+      margin: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #999;
+    }
+    .form-box input, .form-box select, .form-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .result {
+      margin-top: 20px;
+      background: #fff5c2;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body class="tracker">
   <h1>Mood Tracker</h1>
-  <p class="tagline">According to mood give Activities</p>
+
+  <div class="form-box">
+    <form id="moodForm">
+      <label>1. How was your day today?</label>
+      <select name="day">
+        <option value="great">Great</option>
+        <option value="okay">Okay</option>
+        <option value="bad">Bad</option>
+      </select>
+
+      <label>2. What is your current energy level?</label>
+      <select name="energy">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+
+      <label>3. What thoughts are running through your mind?</label>
+      <textarea name="thoughts" rows="2" placeholder="Type here..."></textarea>
+
+      <label>4. Which emotion best matches your current feeling?</label>
+      <select name="emotion">
+        <option value="anger">Anger</option>
+        <option value="sadness">Sadness</option>
+        <option value="enjoyment">Enjoyment</option>
+        <option value="fear">Fear</option>
+        <option value="surprise">Surprise</option>
+        <option value="disgust">Disgust</option>
+        <option value="confusion">Confusion</option>
+      </select>
+
+      <label>5. What do you feel like doing right now?</label>
+      <select name="need">
+        <option value="cry">Crying</option>
+        <option value="relax">Relaxing</option>
+        <option value="talk">Talking to someone</option>
+        <option value="nothing">Nothing</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div id="output" class="result"></div>
+
   <nav class="bottom-nav">
     <a href="index.html">Home</a>
     <a href="journal.html">Journal</a>
     <a href="tracker.html">Activity</a>
   </nav>
+
+  <script>
+    const suggestions = {
+      anger: [
+        "Take a few deep breaths and count down from 20 slowly.",
+        "Go for a short walk without any distractions.",
+        "Write your feelings down, then discard the paper or file."
+      ],
+      sadness: [
+        "Write about what's making you feel low.",
+        "Reach out to a friend or family member.",
+        "Recall something positive that happened recently."
+      ],
+      enjoyment: [
+        "Share your happiness with someone close.",
+        "Write about the best part of your day.",
+        "Give yourself a small reward like a treat or music."
+      ],
+      fear: [
+        "Think about the facts behind your fear rationally.",
+        "Talk to someone you trust about it.",
+        "Try doing one small thing that scares you to gain confidence."
+      ],
+      surprise: [
+        "Reflect on your surprise – was it pleasant or unpleasant?",
+        "Pause before reacting – think it through.",
+        "Note down your thoughts to revisit later."
+      ],
+      disgust: [
+        "Take a step away from what's bothering you.",
+        "Try viewing the situation from a neutral perspective.",
+        "Focus your attention on something positive or productive."
+      ],
+      confusion: [
+        "Break down the issue into smaller parts.",
+        "Seek guidance from someone experienced.",
+        "Take a break and revisit it with a fresh mind."
+      ]
+    };
+
+    document.getElementById('moodForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const mood = e.target.elements.emotion.value;
+      const result = suggestions[mood];
+      const output = `<h3>Your Mood: ${mood.toUpperCase()}</h3><ul>` +
+        result.map(s => `<li>${s}</li>`).join('') +
+        '</ul>';
+      document.getElementById('output').innerHTML = output;
+    });
+  </script>
 </body>
 </html>
