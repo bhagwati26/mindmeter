@@ -46,6 +46,8 @@ h1 {
   box-shadow: 0 0 10px #999;
   max-width: 600px;
   width: 90%;
+  max-height: calc(100vh - 200px); /* 👈 Form height won't go below nav bar */
+  overflow-y: auto;                /* 👈 Scroll enabled if form is big */
 }
 
 /* Form Elements */
@@ -88,8 +90,8 @@ h1 {
   margin: 20px auto;
   background: #ffe8a3;
   padding: 20px;
-  border-radius: 12px;
-  max-width: 600px;
+  border-radius: 11px;
+  max-width: 500px;
   font-size: 1.1rem;
   text-align: left;
 }
@@ -103,7 +105,7 @@ h1 {
 .bottom-nav {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 97%;
   background: #333;
   display: flex;
   justify-content: space-around;
