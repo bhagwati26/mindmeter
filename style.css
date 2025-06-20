@@ -15,7 +15,7 @@ body {
   min-height: 100vh;
   padding-bottom: 60px;
   background-color: #fff7e6;
-  font-size: 1.2rem;
+  font-size: 1.4rem; /* Bigger base font */
 }
 
 /* Center block for each page */
@@ -29,29 +29,29 @@ body {
   padding: 20px;
 }
 
-/* Page backgrounds */
+/* Page backgrounds (faint version) */
 .home {
-  background: linear-gradient(to bottom right, #FFC804, #FFD704);
+  background: linear-gradient(to bottom right, #fff3b0, #ffe680); /* 🔸 faint yellow-orange */
 }
 
 .tracker {
-  background: linear-gradient(to bottom right, #b2f7ef, #5fdd9d);
+  background: linear-gradient(to bottom right, #b2f7ef, #5fdd9d); /* mint-green */
 }
 
 .journal {
-  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb); /* sky-blue */
 }
 
 /* Headings */
 h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin-bottom: 20px;
   color: #333;
 }
 
 /* Tagline */
 .tagline {
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   margin-bottom: 20px;
   color: #444;
 }
@@ -62,21 +62,21 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  font-size: 3rem;
-  max-width: 90%;
-  padding: 20px;
+  font-size: 3.2rem;
+  max-width: 95%;
+  padding: 24px;
 }
 
 /* Centered and big form/journal boxes */
 .form-box,
 .journal-box {
-  width: 95%;
-  max-width: 600px;
+  width: 96%;
+  max-width: 720px; /* ⬆️ wider */
   background-color: #fff1cc;
-  border-radius: 20px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
-  padding: 30px 20px;
-  min-height: 75vh;
+  border-radius: 24px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  padding: 36px 24px;
+  min-height: 78vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,8 +86,8 @@ h1 {
 /* Questions inside boxes */
 .form-box p,
 .journal-box p {
-  font-size: 1.4rem;
-  margin-top: 16px;
+  font-size: 1.6rem;
+  margin-top: 18px;
   color: #222;
 }
 
@@ -96,12 +96,12 @@ textarea,
 input,
 select {
   width: 100%;
-  max-width: 550px;
-  padding: 16px;
-  margin-top: 18px;
+  max-width: 620px;
+  padding: 18px;
+  margin-top: 20px;
   border: 1px solid #ccc;
   border-radius: 12px;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   background-color: #fff9e6;
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
@@ -110,27 +110,27 @@ select {
 /* Buttons */
 button {
   margin-top: 30px;
-  padding: 16px 24px;
+  padding: 18px 28px;
   border-radius: 12px;
   background-color: #ffb347;
   border: none;
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   cursor: pointer;
   width: 100%;
-  max-width: 550px;
+  max-width: 620px;
   font-family: 'Nunito', sans-serif;
 }
 
 /* Journal entries */
 .entry {
-  margin: 12px auto;
+  margin: 14px auto;
   max-width: 90%;
   text-align: center;
   background: #fbe2c2;
-  padding: 14px;
+  padding: 16px;
   border-radius: 12px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 /* Bottom Navigation */
@@ -142,7 +142,7 @@ button {
   color: #FFD704;
   display: flex;
   justify-content: space-around;
-  padding: 14px 0;
+  padding: 16px 0;
   z-index: 100;
 }
 
@@ -150,7 +150,7 @@ button {
   color: #fefefe;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .bottom-nav a:hover {
